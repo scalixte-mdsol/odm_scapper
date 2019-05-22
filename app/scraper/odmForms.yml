@@ -1,0 +1,27 @@
+forms:
+  ERC-242:
+    - DLSA
+    - SDC
+  MT01-KR16GBL401:
+    - QS_W
+    - QS3
+    - QS3_7
+    - QS5
+    - QS3_3
+  TF-TF0023-21:
+    - 103001
+  TV48125-CNS-20024:
+    - PPTHD2
+  1624INF:
+    - EQSSYMP
+    - EQSMED
+  CNTX-4975i-OA-304:
+    - SDD2
+  CNTX-4975i-OA-301:
+    - SDD
+    - SDD2
+  SYD985-002:
+    - QLQ-BR23
+    - QLQ-C3
+  KINKPL914C002:
+    - 420003

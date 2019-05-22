@@ -1,0 +1,33 @@
+const puppeteer = require('puppeteer');
+const loginImedidata = require('./loginImedidata');
+const isIgnorable = require('./isIgnorable');
+// const { odmStudies, odmSubjects, odmForms } = require('./ignorables');
+
+(async () => {
+  const browser = await puppeteer.launch();
+
+  const page = await browser.newPage();
+  await loginImedidata.accessImedidata(page);
+
+  // await page.goto('https://epro.imedidata.com/support_home/201a160e-fc3e-4c5e-9eb1-0c76b8646e69');
+  await page.goto('https://epro.imedidata.com/support_home/4676b1e4-fbbc-4750-9b40-0a25a2900203');
+
+	const result = await page.evaluate(() => {
+ 	  let date = document.querySelector('#odm-header #odm-details tbody tr:nth-child(1) td:nth-child(1)').innerText
+   	let study = document.querySelector('#odm-header #odm-details tbody tr:nth-child(1) td:nth-child(2)').innerText;
+   	let subjectID = document.querySelector('#odm-header #odm-details tbody tr:nth-child(1) td:nth-child(3)').innerText;
+   	let errorMessage = document.querySelector('#odm-header #odm-details tbody tr:nth-child(2) td:nth-child(1) p').innerText;
+   	let formOID = document.querySelector('#odm-edit #odm-edit-form div.well input[name="edits[][new_value]"]:nth-of-type(19)').value;
+    return {
+      date,
+	    study,
+      subjectID,
+      errorMessage,
+      formOID
+	  }
+  });
+
+  console.log(isIgnorable.check(result))
+  await page.screenshot({path: 'screenshot.png'});
+  browser.close()
+})()

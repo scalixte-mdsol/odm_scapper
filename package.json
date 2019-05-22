@@ -1,0 +1,16 @@
+{
+  "name": "odm_scraper",
+  "version": "1.0.0",
+  "description": "A scraper using puppeteer to verify ODM alerts",
+  "main": "app/index.js",
+  "repository": "git@github.com:scalixte-mdsol/odm_scapper.git",
+  "author": "Stanley Calixte <scalixte@mdsol.com>",
+  "license": "MIT",
+  "scripts": {
+    "scrape": "node app/scraper/odmScraper.js"
+  },
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "puppeteer": "^1.16.0"
+  }
+}
