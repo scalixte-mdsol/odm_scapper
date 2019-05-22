@@ -8,8 +8,8 @@ const isIgnorable = require('./isIgnorable');
   const page = await browser.newPage();
   await loginImedidata.accessImedidata(page);
 
-  // await page.goto('https://epro.imedidata.com/support_home/201a160e-fc3e-4c5e-9eb1-0c76b8646e69');
-  await page.goto('https://epro.imedidata.com/support_home/4676b1e4-fbbc-4750-9b40-0a25a2900203');
+  await page.goto('https://epro.imedidata.com/support_home/9cc6517f-3f5b-4e2b-9a4e-51b5c6f49b17');
+  // await page.goto('https://epro.imedidata.com/support_home/4676b1e4-fbbc-4750-9b40-0a25a2900203');
 
   const result = await page.evaluate(() => {
     let date = document.querySelector('#odm-header #odm-details tbody tr:nth-child(1) td:nth-child(1)').innerText;
