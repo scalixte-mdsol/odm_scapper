@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ODM Scrapper</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <div class='container'>
+    <div class='row input-container'>
+      <article>
+        <header>
+          <h1>Hi ODM Here</h1>
+        </header>
+      </article>
+      <form action="/odmList" method="post">
+        <label for="odmList">Please insert a list of ODM UUIDS</label>
+        <textarea id="odmList" name="odmList" rows="10" cols="40"></textarea>
+        <div class="submit-button">
+          <input type="submit" value="Find Ignorables!">
+        </div>
+      </form>
+    </div>
+    <div class='row results-container'>
+      <table id='odmListTable'></table>
+    </div>
+  </div>
+</body>
+
+</html>

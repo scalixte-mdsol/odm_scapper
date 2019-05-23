@@ -1,17 +1,7 @@
-const puppeteer = require('puppeteer');
-const loginImedidata = require('./loginImedidata');
 const isIgnorable = require('./isIgnorable');
-
-(async () => {
-  const browser = await puppeteer.launch();
-
-  const page = await browser.newPage();
-  await loginImedidata.accessImedidata(page);
-
-  await page.goto('https://epro.imedidata.com/support_home/9cc6517f-3f5b-4e2b-9a4e-51b5c6f49b17');
-  // await page.goto('https://epro.imedidata.com/support_home/4676b1e4-fbbc-4750-9b40-0a25a2900203');
-
-  const result = await page.evaluate(() => {
+exports.scrapeOdm = async (browser, supportLink) => {
+  await page.goto(supportLink);
+  return await page.evaluate(() => {
     let date = document.querySelector('#odm-header #odm-details tbody tr:nth-child(1) td:nth-child(1)').innerText;
     let study = document.querySelector('#odm-header #odm-details tbody tr:nth-child(1) td:nth-child(2)').innerText;
     let subjectID = document.querySelector('#odm-header #odm-details tbody tr:nth-child(1) td:nth-child(3)').innerText;
@@ -25,9 +15,4 @@ const isIgnorable = require('./isIgnorable');
       formOID
     };
   });
-
-  console.log(isIgnorable.check(result));
-  await page.screenshot({ path: 'screenshot.png' });
-  console.log('CLOSING')
-  browser.close();
-})();
+};

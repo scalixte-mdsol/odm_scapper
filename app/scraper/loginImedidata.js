@@ -17,8 +17,8 @@ exports.accessImedidata = async page => {
     await page.type('#session_password', process.env.IMEDIDATA_PASSWORD);
     await page.click('#create_session_link');
     //   await page.waitForNavigation();
-    await page.screenshot({ path: 'imedidata.png' });
+    // await page.screenshot({ path: 'imedidata.png' });
   }
-  console.log(iMedidataUrl);
-  console.log('process.env.IMEDIDATA_USER_NAME', process.env.IMEDIDATA_USER_NAME);
+  // console.log(iMedidataUrl);
+  // console.log('process.env.IMEDIDATA_USER_NAME', process.env.IMEDIDATA_USER_NAME);
 };
