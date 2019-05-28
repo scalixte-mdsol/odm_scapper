@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const loginImedidata = require('./loginImedidata');
-const isIgnorable = require('./isIgnorable');
+const { checkContent } = require('./isIgnorable');
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -26,7 +26,7 @@ const isIgnorable = require('./isIgnorable');
     };
   });
 
-  console.log(isIgnorable.check(result));
+  console.log(checkContent(result));
   await page.screenshot({ path: 'screenshot.png' });
   console.log('CLOSING')
   browser.close();

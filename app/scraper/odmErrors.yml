@@ -1,0 +1,10 @@
+errors:
+  NPC-15-5:
+    - Record locked.
+  NPC-15-6:
+    - Record locked.
+    - Transaction on frozen field is not permitted.
+  TBA2-1:
+    - Transaction on frozen field is not permitted.
+  CP1703CSPM Cervical Stim Prospective:
+    - Subject does not exist.

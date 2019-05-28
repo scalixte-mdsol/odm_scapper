@@ -14,3 +14,4 @@ const loadContent = filename => {
 exports.odmStudies = loadContent('app/scraper/odmStudies.yml');
 exports.odmSubjects = loadContent('app/scraper/odmSubjects.yml');
 exports.odmForms = loadContent('app/scraper/odmForms.yml');
+exports.odmErrors = loadContent('app/scraper/odmErrors.yml');
