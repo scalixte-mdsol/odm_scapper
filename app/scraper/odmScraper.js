@@ -8,6 +8,7 @@ const { checkContent } = require('./isIgnorable');
   const page = await browser.newPage();
   await loginImedidata.accessImedidata(page);
 
+
   await page.goto('https://epro.imedidata.com/support_home/9cc6517f-3f5b-4e2b-9a4e-51b5c6f49b17');
   // await page.goto('https://epro.imedidata.com/support_home/4676b1e4-fbbc-4750-9b40-0a25a2900203');
 

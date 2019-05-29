@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 const loginImedidata = require('./loginImedidata');
 const { checkContent } = require('./isIgnorable');
 
+// TODO - Next Iterate it with multi pages in parallel
 exports.odmListScraper = async odmList => {}
 
 exports.odmSingleScraper = async odmUuid => {

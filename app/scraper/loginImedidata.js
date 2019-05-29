@@ -4,7 +4,6 @@ exports.accessImedidata = async page => {
 
   // Verify login status
   await page.goto(imedidataPage);
-  // await page.waitForNavigation();
 
   const iMedidataUrl = page.url();
   if (iMedidataUrl.includes(imedidataPage)) {
@@ -12,13 +11,8 @@ exports.accessImedidata = async page => {
   } else {
     // Login to iMedidata
     await page.goto(loginImedidataPage);
-    //   console.log('process.env.IMEDIDATA_USER_NAME', process.env.IMEDIDATA_USER_NAME);
     await page.type('#session_username', process.env.IMEDIDATA_USER_NAME);
     await page.type('#session_password', process.env.IMEDIDATA_PASSWORD);
     await page.click('#create_session_link');
-    //   await page.waitForNavigation();
-    // await page.screenshot({ path: 'imedidata.png' });
   }
-  // console.log(iMedidataUrl);
-  // console.log('process.env.IMEDIDATA_USER_NAME', process.env.IMEDIDATA_USER_NAME);
 };
